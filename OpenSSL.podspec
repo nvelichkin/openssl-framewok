@@ -5,15 +5,12 @@ Pod::Spec.new do |s|
   s.source          = { :git => "git@github.com:nvelichkin/openssl-framework.git", :tag => "#{s.version}"}
   s.author          = "OpenSSL Project <openssl-dev@openssl.org>"
   s.homepage        = "https://github.com/nvelichkin/openssl-framework"
-  s.source_files    = "openssl.framework/Headers/*.h"
-  s.header_dir      = "openssl"
   s.license         = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE' }
 
-  s.ios.deployment_target   = "8.0"
-  s.ios.public_header_files = "openssl.framework/Headers/*.h"
-  s.ios.vendored_frameworks = "openssl.framework"
-
-  s.libraries             = 'crypto', 'ssl'
-  s.requires_arc          = false
+  s.public_header_files = "openssl.framework/Headers/*.h"
+  s.source_files = "openssl.framework/Headers/*.h"
+  s.vendored_frameworks = "openssl.framework"
+  s.platform = :ios
+  s.ios.deployment_target  = '8.0'
 
 end
